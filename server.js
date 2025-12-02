@@ -109,7 +109,8 @@ Return ONLY the reply text that the seller will post publicly.
 
     // Call Groq chat completion
     const completion = await client.chat.completions.create({
-      model: "llama3-8b-8192", // Groq model; we can change later if needed
+        model: "llama-3.1-8b-instant",
+ // Groq model; we can change later if needed
       messages: [
         { role: "system", content: systemPrompt },
         { role: "user", content: userPrompt },
@@ -143,3 +144,4 @@ const PORT = process.env.PORT || 4000; // dev default 4000
 app.listen(PORT, () => {
   console.log(`✅ ReplyPilot (Groq) server running on port ${PORT}`);
 });
+
